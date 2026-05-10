@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FlourWiz – Artisan bakery crafting handmade cookies, brownies, tea cakes & breads fresh daily in Pune." />
+  <title>FlourWiz – Artisan Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">FlourWiz</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Our Bakes</a></li>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact" class="nav-cta">Order Now</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">Our Bakes</a></li>
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Order Now</a></li>
+    </ul>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+      <div class="hero-shape hero-shape-3"></div>
+    </div>
+
+    <div class="floating-items" aria-hidden="true">
+      <span class="float-item float-1">🍪</span>
+      <span class="float-item float-2">🎂</span>
+      <span class="float-item float-3">🍞</span>
+      <span class="float-item float-4">🧁</span>
+      <span class="float-item float-5">☕</span>
+      <span class="float-item float-6">🌿</span>
+      <span class="float-item float-7">🍫</span>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-tag">Artisan Bakery &middot; Est. 2020</p>
+      <h1 class="hero-title">
+        Baked with <span class="highlight">Love</span><br />
+        Crafted with <span class="highlight">Magic</span>
+      </h1>
+      <p class="hero-subtitle">
+        Every bite tells a story. We bake handcrafted cookies, brownies,
+        tea cakes &amp; breads — made fresh every morning with the finest ingredients.
+      </p>
+      <div class="hero-buttons">
+        <a href="#products" class="btn btn-primary">Explore Our Bakes</a>
+        <a href="#about" class="btn btn-outline">Our Story</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll" id="heroScroll">
+      <span>Scroll to explore</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES STRIP ── -->
+  <section class="features" aria-label="Our highlights">
+    <div class="features-container">
+      <div class="feature-item" data-animate>
+        <span class="feature-icon" aria-hidden="true">🌱</span>
+        <h3>All Natural</h3>
+        <p>No preservatives, ever</p>
+      </div>
+      <div class="feature-item" data-animate>
+        <span class="feature-icon" aria-hidden="true">🤲</span>
+        <h3>Handcrafted</h3>
+        <p>Made with care &amp; passion</p>
+      </div>
+      <div class="feature-item" data-animate>
+        <span class="feature-icon" aria-hidden="true">🌅</span>
+        <h3>Fresh Daily</h3>
+        <p>Baked every morning</p>
+      </div>
+      <div class="feature-item" data-animate>
+        <span class="feature-icon" aria-hidden="true">🚚</span>
+        <h3>Fast Delivery</h3>
+        <p>Right to your doorstep</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRODUCTS ── -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="section-tag">What We Bake</p>
+        <h2 class="section-title">Our Signature <span class="highlight">Creations</span></h2>
+        <p class="section-subtitle">Each product is a little piece of happiness, crafted to perfection</p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- Cookies -->
+        <article class="product-card" data-animate>
+          <div class="product-visual cookies-visual">
+            <img src="/images/Chocolate%20Chip%20Cookies.jpg" alt="Chocolate Chip Cookies" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3>Artisan Cookies</h3>
+            <p>Crispy edges, chewy centres. Classic chocolate chip, oatmeal raisin and seasonal specials — each one baked to golden perfection.</p>
+            <div class="product-footer">
+              <span class="price">From ₹120</span>
+              <button class="order-btn" data-scroll-to="contact">Order Now &rarr;</button>
+            </div>
+          </div>
+          <div class="card-tag">Bestseller</div>
+        </article>
+
+        <!-- Brownies -->
+        <article class="product-card" data-animate>
+          <div class="product-visual brownies-visual">
+            <img src="/images/Chocolate%20Brownies.jpg" alt="Chocolate Brownies" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3>Fudgy Brownies</h3>
+            <p>Rich, dark and decadent. Dense, fudgy and loaded with premium Belgian chocolate — impossible to eat just one.</p>
+            <div class="product-footer">
+              <span class="price">From ₹150</span>
+              <button class="order-btn" data-scroll-to="contact">Order Now &rarr;</button>
+            </div>
+          </div>
+          <div class="card-tag">Fan Fave</div>
+        </article>
+
+        <!-- Tea Cakes -->
+        <article class="product-card" data-animate>
+          <div class="product-visual teacakes-visual">
+            <img src="/images/Orange%20Chocolate%20Cake.jpg" alt="Orange Chocolate Cake" class="product-img" />
+          </div>
+          <div class="product-info">
+            <h3>Tea Cakes</h3>
+            <p>Light, fluffy and perfectly sweet — the ideal companion for your afternoon chai. Lemon, vanilla, and spiced cardamom varieties.</p>
+            <div class="product-footer">
+              <span class="price">From ₹200</span>
+              <button class="order-btn" data-scroll-to="contact">Order Now &rarr;</button>
+            </div>
+          </div>
+          <div class="card-tag">New!</div>
+        </article>
+
+        <!-- Breads -->
+        <article class="product-card" data-animate>
+          <div class="product-visual breads-visual">
+            <span class="product-emoji" aria-hidden="true">🍞</span>
+            <div class="product-bg-dots" aria-hidden="true"></div>
+          </div>
+          <div class="product-info">
+            <h3>Artisan Breads</h3>
+            <p>Slow-fermented sourdoughs, whole grain loaves and herb-infused breads — hearty, wholesome and made with love.</p>
+            <div class="product-footer">
+              <span class="price">From ₹180</span>
+              <button class="order-btn" data-scroll-to="contact">Order Now &rarr;</button>
+            </div>
+          </div>
+          <div class="card-tag">Wholesome</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-visual" data-animate>
+          <div class="about-blob">
+            <div class="about-emoji-stack" aria-hidden="true">
+              <span>🧁</span>
+              <span>🍞</span>
+              <span>🍪</span>
+            </div>
+          </div>
+          <div class="stat-cards">
+            <div class="stat-card">
+              <div class="stat-row">
+                <span class="stat-num" data-count="5">0</span><span class="stat-plus">+</span>
+              </div>
+              <p>Years Baking</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-row">
+                <span class="stat-num" data-count="2000">0</span><span class="stat-plus">+</span>
+              </div>
+              <p>Happy Customers</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-row">
+                <span class="stat-num" data-count="50">0</span><span class="stat-plus">+</span>
+              </div>
+              <p>Recipes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content" data-animate>
+          <p class="section-tag">Our Story</p>
+          <h2 class="section-title">A Pinch of Passion,<br>A Cup of <span class="highlight">Magic</span></h2>
+          <p class="about-text">
+            FlourWiz started in a tiny kitchen in 2020, born from a love for real, honest baking.
+            No shortcuts, no artificial additives — just premium ingredients, time-honoured recipes
+            and a whole lot of heart.
+          </p>
+          <p class="about-text">
+            Our baker-in-chief, Pranita, believes every baked good should tell a story — of warmth,
+            comfort and pure joy. From that little kitchen, we've grown into a beloved local bakery,
+            but our soul remains the same.
+          </p>
+          <div class="about-values">
+            <div class="value-item"><span aria-hidden="true">✓</span> Locally sourced ingredients</div>
+            <div class="value-item"><span aria-hidden="true">✓</span> No artificial preservatives</div>
+            <div class="value-item"><span aria-hidden="true">✓</span> Baked to order</div>
+            <div class="value-item"><span aria-hidden="true">✓</span> Customisable for events</div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPECIAL BANNER ── -->
+  <section class="special-banner" aria-label="Special offer">
+    <div class="banner-floats" aria-hidden="true">
+      <span>🍪</span><span>🧁</span><span>🍞</span><span>🍫</span>
+    </div>
+    <div class="banner-content">
+      <div class="banner-text" data-animate>
+        <p class="section-tag" style="color:var(--champ-200);">Today's Special</p>
+        <h2>Free delivery on orders <span>above ₹500</span></h2>
+        <p>Use code <strong>FLOURWIZ</strong> at checkout</p>
+      </div>
+      <a href="#contact" class="btn btn-champagne" data-animate>Claim Offer</a>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="section-tag">What People Say</p>
+        <h2 class="section-title">Made with Love, <span class="highlight">Loved by Many</span></h2>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card" data-animate>
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p>"The sourdough bread from FlourWiz is literally the best thing I've ever eaten. Crusty, chewy and with this beautiful tang — I order every single week!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">A</div>
+            <div>
+              <strong>Ananya S.</strong>
+              <span>Loyal Customer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card featured" data-animate>
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p>"Ordered brownies for my daughter's birthday — they were gone in 10 minutes! Everyone kept asking where they were from. FlourWiz is simply magical. 🤎"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">R</div>
+            <div>
+              <strong>Ravi Mehta</strong>
+              <span>Happy Parent</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-animate>
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p>"The lemon tea cake is my absolute weakness. Perfectly moist, not too sweet, and pairs beautifully with my evening chai. I'm basically a FlourWiz ambassador now!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">P</div>
+            <div>
+              <strong>Priya K.</strong>
+              <span>Tea Cake Addict</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT / ORDER ── -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info" data-animate>
+          <p class="section-tag">Get In Touch</p>
+          <h2 class="section-title">Let's Bake Something <span class="highlight">Together</span></h2>
+          <p class="section-subtitle">Place a custom order, enquire about bulk baking, or just say hello — we love hearing from you!</p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <span aria-hidden="true">📍</span>
+              <div>
+                <strong>Find Us</strong>
+                <p>12, Flour Lane, Bakery Street, Pune 411001</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span aria-hidden="true">📞</span>
+              <div>
+                <strong>Call Us</strong>
+                <p>+91 98765 43210</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span aria-hidden="true">⏰</span>
+              <div>
+                <strong>Bakery Hours</strong>
+                <p>Mon–Sat: 8 am – 8 pm &nbsp;|&nbsp; Sun: 9 am – 5 pm</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap" data-animate>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="e.g. Ananya Sharma" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="product">Interested In</label>
+              <select id="product" name="product">
+                <option value="">Choose a product…</option>
+                <option>Artisan Cookies</option>
+                <option>Fudgy Brownies</option>
+                <option>Tea Cakes</option>
+                <option>Artisan Breads</option>
+                <option>Custom / Mixed Box</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your order or event…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Send Message 🧁</button>
+          </form>
+
+          <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+            <span aria-hidden="true">✓</span>
+            <h3>Message Sent!</h3>
+            <p>Thank you! We'll get back to you within 24 hours with something sweet. 🍪</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo">
+            <span class="logo-icon" aria-hidden="true">🌿</span>
+            <span class="logo-text">FlourWiz</span>
+          </a>
+          <p>Crafting happiness, one bake at a time. Made with love in Pune, India.</p>
+          <div class="social-links" aria-label="Social media">
+            <a href="#" class="social-link" aria-label="Instagram">📸</a>
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Our Bakes</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Order Now</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Our Products</h4>
+          <ul>
+            <li><a href="#products">Artisan Cookies</a></li>
+            <li><a href="#products">Fudgy Brownies</a></li>
+            <li><a href="#products">Tea Cakes</a></li>
+            <li><a href="#products">Artisan Breads</a></li>
+            <li><a href="#contact">Custom Orders</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4>Stay Sweet</h4>
+          <p>Subscribe for weekly specials, new flavours &amp; sweet surprises!</p>
+          <div class="newsletter-form">
+            <input type="email" id="newsletterEmail" placeholder="Your email address" aria-label="Email for newsletter" autocomplete="email" />
+            <button type="button" id="newsletterBtn">Subscribe</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 FlourWiz Bakery. All rights reserved. Baked with 💚</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
