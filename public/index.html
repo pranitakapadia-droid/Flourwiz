@@ -127,74 +127,15 @@
         <p class="section-subtitle">Each product is a little piece of happiness, crafted to perfection</p>
       </div>
 
-      <div class="products-grid">
-
-        <!-- Cookies -->
-        <article class="product-card" data-animate>
-          <div class="product-visual cookies-visual">
-            <img src="/images/Chocolate%20Chip%20Cookies.jpg" alt="Chocolate Chip Cookies" class="product-img" />
-          </div>
-          <div class="product-info">
-            <h3>Artisan Cookies</h3>
-            <p>Crispy edges, chewy centres. Classic chocolate chip, oatmeal raisin and seasonal specials — each one baked to golden perfection.</p>
-            <div class="product-footer">
-              <span class="price">From ₹120</span>
-              <button class="order-btn" data-scroll-to="contact">Order Now &rarr;</button>
-            </div>
-          </div>
-          <div class="card-tag">Bestseller</div>
-        </article>
-
-        <!-- Brownies -->
-        <article class="product-card" data-animate>
-          <div class="product-visual brownies-visual">
-            <img src="/images/Chocolate%20Brownies.jpg" alt="Chocolate Brownies" class="product-img" />
-          </div>
-          <div class="product-info">
-            <h3>Fudgy Brownies</h3>
-            <p>Rich, dark and decadent. Dense, fudgy and loaded with premium Belgian chocolate — impossible to eat just one.</p>
-            <div class="product-footer">
-              <span class="price">From ₹150</span>
-              <button class="order-btn" data-scroll-to="contact">Order Now &rarr;</button>
-            </div>
-          </div>
-          <div class="card-tag">Fan Fave</div>
-        </article>
-
-        <!-- Tea Cakes -->
-        <article class="product-card" data-animate>
-          <div class="product-visual teacakes-visual">
-            <img src="/images/Orange%20Chocolate%20Cake.jpg" alt="Orange Chocolate Cake" class="product-img" />
-          </div>
-          <div class="product-info">
-            <h3>Tea Cakes</h3>
-            <p>Light, fluffy and perfectly sweet — the ideal companion for your afternoon chai. Lemon, vanilla, and spiced cardamom varieties.</p>
-            <div class="product-footer">
-              <span class="price">From ₹200</span>
-              <button class="order-btn" data-scroll-to="contact">Order Now &rarr;</button>
-            </div>
-          </div>
-          <div class="card-tag">New!</div>
-        </article>
-
-        <!-- Breads -->
-        <article class="product-card" data-animate>
-          <div class="product-visual breads-visual">
-            <span class="product-emoji" aria-hidden="true">🍞</span>
-            <div class="product-bg-dots" aria-hidden="true"></div>
-          </div>
-          <div class="product-info">
-            <h3>Artisan Breads</h3>
-            <p>Slow-fermented sourdoughs, whole grain loaves and herb-infused breads — hearty, wholesome and made with love.</p>
-            <div class="product-footer">
-              <span class="price">From ₹180</span>
-              <button class="order-btn" data-scroll-to="contact">Order Now &rarr;</button>
-            </div>
-          </div>
-          <div class="card-tag">Wholesome</div>
-        </article>
-
+      <div class="products-filter" role="tablist" aria-label="Filter products">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="cookies" role="tab" aria-selected="false">Cookies</button>
+        <button class="filter-btn" data-filter="brownies" role="tab" aria-selected="false">Brownies</button>
+        <button class="filter-btn" data-filter="teacakes" role="tab" aria-selected="false">Tea Cakes</button>
+        <button class="filter-btn" data-filter="breads" role="tab" aria-selected="false">Breads</button>
       </div>
+
+      <div class="products-grid" id="productsGrid"></div>
     </div>
   </section>
 

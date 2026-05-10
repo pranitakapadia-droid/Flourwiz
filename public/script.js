@@ -34,6 +34,20 @@ document.querySelectorAll('a, button, .product-card, .feature-item, .order-btn')
   });
 });
 
+/* ── ACTIVE NAV HIGHLIGHT ── */
+const sections = Array.from(document.querySelectorAll('section[id]'));
+const navLinks = document.querySelectorAll('.nav-links a');
+
+function updateActiveNav() {
+  let current = '';
+  sections.forEach((sec) => {
+    if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+  });
+  navLinks.forEach((link) => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
+}
+
 /* ── SCROLL PROGRESS & STICKY NAV ── */
 const scrollProgress = document.getElementById('scrollProgress');
 const nav            = document.getElementById('nav');
@@ -92,27 +106,73 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-/* Scroll-to via data attribute (Order Now buttons) */
-document.querySelectorAll('[data-scroll-to]').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const target = document.getElementById(btn.dataset.scrollTo);
-    if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-  });
-});
+/* ── PRODUCT DATA ── */
+const PRODUCTS = [
+  // Cookies
+  { id: 1, category: 'cookies', name: 'Chocolate Chip Cookies', price: 120, tag: 'Bestseller',  img: '/images/Chocolate%20Chip%20Cookies.jpg',   emoji: null, desc: 'Crispy edges, chewy centres — loaded with rich chocolate chips baked to golden perfection.' },
+  { id: 2, category: 'cookies', name: 'Double Chocolate Cookies', price: 130, tag: 'Must Try',  img: '/images/Double%20Chocolate%20Cookies.jpg', emoji: null, desc: 'An indulgent double dose of chocolate — dark cocoa dough packed with extra chocolate chunks.' },
+  { id: 3, category: 'cookies', name: 'Oatmeal Raisin Cookies', price: 110, tag: 'Classic',     img: null, emoji: '🍪', desc: 'Hearty oats, plump raisins and a whisper of cinnamon — wholesome, chewy and deeply comforting.' },
+  // Brownies
+  { id: 4, category: 'brownies', name: 'Fudgy Brownies', price: 150, tag: 'Fan Fave', img: '/images/Chocolate%20Brownies.jpg', emoji: null, desc: 'Rich, dark and decadent. Dense, fudgy and loaded with premium Belgian chocolate — impossible to eat just one.' },
+  // Tea Cakes
+  { id: 5, category: 'teacakes', name: 'Tea Cakes', price: 200, tag: 'New!', img: '/images/Orange%20Chocolate%20Cake.jpg', emoji: null, desc: 'Light, fluffy and perfectly sweet — the ideal companion for your afternoon chai. Lemon, vanilla, and spiced cardamom varieties.' },
+  // Breads
+  { id: 6, category: 'breads', name: 'Artisan Breads', price: 180, tag: 'Wholesome', img: null, emoji: '🍞', desc: 'Slow-fermented sourdoughs, whole grain loaves and herb-infused breads — hearty, wholesome and made with love.' },
+];
 
-/* ── ACTIVE NAV HIGHLIGHT ── */
-const sections = Array.from(document.querySelectorAll('section[id]'));
-const navLinks = document.querySelectorAll('.nav-links a');
+const VISUAL_CLASS = { cookies: 'cookies-visual', brownies: 'brownies-visual', teacakes: 'teacakes-visual', breads: 'breads-visual' };
 
-function updateActiveNav() {
-  let current = '';
-  sections.forEach((sec) => {
-    if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+function renderProducts(filter) {
+  const grid  = document.getElementById('productsGrid');
+  const items = filter === 'all' ? PRODUCTS : PRODUCTS.filter((p) => p.category === filter);
+
+  grid.innerHTML = items.map((p) => `
+    <article class="product-card" data-animate>
+      <div class="product-visual ${VISUAL_CLASS[p.category]}">
+        ${p.img
+          ? `<img src="${p.img}" alt="${p.name}" class="product-img" />`
+          : `<span class="product-emoji" aria-hidden="true">${p.emoji}</span><div class="product-bg-dots" aria-hidden="true"></div>`
+        }
+      </div>
+      <div class="product-info">
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <div class="product-footer">
+          <span class="price">From &#8377;${p.price}</span>
+          <button class="order-btn" data-scroll-to="contact">Order Now &rarr;</button>
+        </div>
+      </div>
+      <div class="card-tag">${p.tag}</div>
+    </article>
+  `).join('');
+
+  /* Re-observe new cards for scroll animation */
+  grid.querySelectorAll('[data-animate]').forEach((el) => revealObserver.observe(el));
+
+  /* Re-attach order button scroll handlers */
+  grid.querySelectorAll('[data-scroll-to]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.scrollTo);
+      if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+    });
   });
-  navLinks.forEach((link) => {
-    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+
+  /* Re-attach cursor hover events */
+  grid.querySelectorAll('.product-card, .order-btn').forEach((el) => {
+    el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); cursorFollower.classList.add('hover'); });
+    el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); cursorFollower.classList.remove('hover'); });
   });
 }
+
+/* ── FILTER TABS ── */
+document.querySelectorAll('.filter-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach((b) => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    renderProducts(btn.dataset.filter);
+  });
+});
 
 /* ── INTERSECTION OBSERVER – SCROLL ANIMATIONS ── */
 const revealObserver = new IntersectionObserver(
@@ -134,6 +194,9 @@ const revealObserver = new IntersectionObserver(
 );
 
 document.querySelectorAll('[data-animate]').forEach((el) => revealObserver.observe(el));
+
+/* Initial product render – must come after revealObserver is defined */
+renderProducts('all');
 
 /* Also trigger highlight underlines in the hero (no data-animate wrapper) */
 setTimeout(() => {
